@@ -58,20 +58,20 @@ export default class P5Renderer implements BaseRenderer{
 
     protected draw(s) {
         if (this.animating) { 
-            this.frameCount += 3;
+            this.frameCount += 5;
 
             let frameDelta = 2 * Math.PI * (this.frameCount % this.totalFrames) / this.totalFrames;
 
             //s.colorMode(s.RGB);
             let bg = s.color(this.backgroundColor);
-            bg.setAlpha(100);
+            //bg.setAlpha(150);
             s.background(bg);
 
             //s.colorMode(s.HSB);
 
             //s.translate(-s.width / 2, -s.height / 2);
 
-            let numpoints = 10;
+            let numpoints = 25;
             let centerX = s.width / 2;
             let centerY = s.height / 2;
             let radiusX = s.width / 4;
@@ -85,9 +85,9 @@ export default class P5Renderer implements BaseRenderer{
 
                     let x = centerX + Math.sin(i + angle + frameDelta) * j * 14; //rotate circles
                     let y = centerY + Math.cos(i + angle + frameDelta) * j * 14;
-                    if (j > 1) {
-                        s.circle(x, y, s.noise(Math.sin(i + j + frameDelta) * 2) * 20);
-                    }
+                    //if (j > 1) {
+                        s.circle(x, y, s.noise(Math.sin(i + j + frameDelta) * 2) * 40);
+                    //}
                     
                     let a = s.color(this.colors[0]);
                     let b = s.color(this.colors[2]);

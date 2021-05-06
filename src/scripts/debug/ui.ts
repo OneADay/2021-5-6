@@ -1,6 +1,8 @@
 const formats = [
     'gif',
     'webm',
+    'png',
+    'jpg',
     'thumbnail'
 ];
 
